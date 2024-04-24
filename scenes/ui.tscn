@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce021fttltu0"]
+
+[ext_resource type="Texture2D" uid="uid://b0q5eds27wlnr" path="res://assets/arrow-turn.png" id="1_wp3vf"]
+[ext_resource type="Texture2D" uid="uid://bdmclx1bm28yg" path="res://assets/arrow-straight.png" id="2_dpg1p"]
+
+[node name="UI" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="TurnLeftButton" type="TouchScreenButton" parent="Control/GridContainer"]
+texture_normal = ExtResource("1_wp3vf")
+action = "left"
+
+[node name="ForwardButton" type="TouchScreenButton" parent="Control/GridContainer"]
+rotation = -1.5708
+texture_normal = ExtResource("2_dpg1p")
+action = "forward"
+
+[node name="TurnRightButton" type="TouchScreenButton" parent="Control/GridContainer"]
+scale = Vector2(-1, 1)
+texture_normal = ExtResource("1_wp3vf")
+action = "right"
+
+[node name="BackwardButton" type="TouchScreenButton" parent="Control/GridContainer"]
+position = Vector2(1, -128)
+rotation = 1.5708
+texture_normal = ExtResource("2_dpg1p")
+action = "backward"

@@ -11,12 +11,36 @@ config_version=5
 [application]
 
 config/name="Dungeon"
+run/main_scene="res://level.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/level_block/plugin.cfg")
+
+[input]
+
+forward={
+"deadzone": 0.5,
+"events": []
+}
+backward={
+"deadzone": 0.5,
+"events": []
+}
+left={
+"deadzone": 0.5,
+"events": []
+}
+right={
+"deadzone": 0.5,
+"events": []
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
