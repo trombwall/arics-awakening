@@ -44,6 +44,14 @@ right={
 "deadzone": 0.5,
 "events": []
 }
+strafe_left={
+"deadzone": 0.5,
+"events": []
+}
+strafe_right={
+"deadzone": 0.5,
+"events": []
+}
 
 [input_devices]
 

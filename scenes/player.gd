@@ -6,6 +6,10 @@ const TRAVEL_TIME := 0.3
 @onready var front_ray = $FrontRay
 @onready var back_ray = $BackRay
 
+# Additional raycasts for left and right collisions might be necessary
+@onready var left_ray = $LeftRay
+@onready var right_ray = $RightRay
+
 var tween
 
 func _physics_process(_delta):
@@ -13,6 +17,7 @@ func _physics_process(_delta):
         if tween.is_running():
             return
 
+    # Forward and backward
     if Input.is_action_just_pressed("forward") and not front_ray.is_colliding():
         var local_forward = transform.basis.z.normalized() # Local forward direction
         tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
@@ -23,6 +28,18 @@ func _physics_process(_delta):
         tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
         tween.tween_property(self, "transform", transform.translated(local_backward * 2), TRAVEL_TIME)
 
+    # Left and right strafing
+    if Input.is_action_just_pressed("strafe_left") and not left_ray.is_colliding():
+        var local_left = transform.basis.x.normalized() # Local left direction
+        tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+        tween.tween_property(self, "transform", transform.translated( - local_left * 2), TRAVEL_TIME)
+
+    if Input.is_action_just_pressed("strafe_right") and not right_ray.is_colliding():
+        var local_right = transform.basis.x.normalized() # Local right direction
+        tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+        tween.tween_property(self, "transform", transform.translated(local_right * 2), TRAVEL_TIME)
+
+    # Rotations
     if Input.is_action_just_pressed("left"):
         tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
         tween.tween_property(self, "transform:basis", transform.basis.rotated(Vector3.UP, PI / 2), TRAVEL_TIME)

@@ -35,10 +35,16 @@ texture_normal = ExtResource("1_wp3vf")
 action = "left"
 
 [node name="ForwardButton" type="TouchScreenButton" parent="Control/PanelContainer"]
-position = Vector2(260, 157)
+position = Vector2(260, 160)
 rotation = -1.5708
 texture_normal = ExtResource("2_dpg1p")
 action = "forward"
+
+[node name="StrafeLeftButton" type="TouchScreenButton" parent="Control/PanelContainer"]
+position = Vector2(170, 290)
+rotation = -3.14159
+texture_normal = ExtResource("2_dpg1p")
+action = "strafe_left"
 
 [node name="TurnRightButton" type="TouchScreenButton" parent="Control/PanelContainer"]
 position = Vector2(600, 20)
@@ -52,3 +58,10 @@ position = Vector2(388, 160)
 rotation = 1.5708
 texture_normal = ExtResource("2_dpg1p")
 action = "backward"
+
+[node name="StrafeRightButton" type="TouchScreenButton" parent="Control/PanelContainer"]
+position = Vector2(470, 290)
+rotation = 3.14159
+scale = Vector2(-1, 1)
+texture_normal = ExtResource("2_dpg1p")
+action = "strafe_right"
