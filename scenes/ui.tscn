@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce021fttltu0"]
+[gd_scene load_steps=4 format=3 uid="uid://ce021fttltu0"]
 
 [ext_resource type="Texture2D" uid="uid://b0q5eds27wlnr" path="res://assets/arrow-turn.png" id="1_wp3vf"]
 [ext_resource type="Texture2D" uid="uid://bdmclx1bm28yg" path="res://assets/arrow-straight.png" id="2_dpg1p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkdmj"]
 
 [node name="UI" type="Node2D"]
 
@@ -13,28 +15,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-columns = 3
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -324.0
+offset_top = -298.0
+offset_right = 324.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rkdmj")
 
-[node name="TurnLeftButton" type="TouchScreenButton" parent="Control/GridContainer"]
+[node name="TurnLeftButton" type="TouchScreenButton" parent="Control/PanelContainer"]
+position = Vector2(40, 20)
 texture_normal = ExtResource("1_wp3vf")
 action = "left"
 
-[node name="ForwardButton" type="TouchScreenButton" parent="Control/GridContainer"]
+[node name="ForwardButton" type="TouchScreenButton" parent="Control/PanelContainer"]
+position = Vector2(260, 157)
 rotation = -1.5708
 texture_normal = ExtResource("2_dpg1p")
 action = "forward"
 
-[node name="TurnRightButton" type="TouchScreenButton" parent="Control/GridContainer"]
-scale = Vector2(-1, 1)
+[node name="TurnRightButton" type="TouchScreenButton" parent="Control/PanelContainer"]
+position = Vector2(600, 20)
+rotation = 3.14159
+scale = Vector2(1, -1)
 texture_normal = ExtResource("1_wp3vf")
 action = "right"
 
-[node name="BackwardButton" type="TouchScreenButton" parent="Control/GridContainer"]
-position = Vector2(1, -128)
+[node name="BackwardButton" type="TouchScreenButton" parent="Control/PanelContainer"]
+position = Vector2(388, 160)
 rotation = 1.5708
 texture_normal = ExtResource("2_dpg1p")
 action = "backward"
