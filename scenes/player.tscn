@@ -6,8 +6,8 @@
 script = ExtResource("1_jci7g")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
-fov = 90.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+fov = 110.0
 
 [node name="FrontRay" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -2)

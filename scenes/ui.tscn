@@ -9,59 +9,83 @@
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 8
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -324.0
-offset_top = -298.0
-offset_right = 324.0
+offset_right = 638.0
+offset_bottom = 424.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rkdmj")
 
-[node name="TurnLeftButton" type="TouchScreenButton" parent="Control/PanelContainer"]
-position = Vector2(40, 20)
+[node name="GridContainer" type="GridContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="ColorRect" type="ColorRect" parent="Control/PanelContainer/GridContainer"]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+
+[node name="TurnLeftButton" type="TouchScreenButton" parent="Control/PanelContainer/GridContainer/ColorRect"]
+position = Vector2(39, 41)
 texture_normal = ExtResource("1_wp3vf")
 action = "left"
 
-[node name="ForwardButton" type="TouchScreenButton" parent="Control/PanelContainer"]
-position = Vector2(260, 160)
+[node name="ColorRect2" type="ColorRect" parent="Control/PanelContainer/GridContainer"]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+
+[node name="ForwardButton" type="TouchScreenButton" parent="Control/PanelContainer/GridContainer/ColorRect2"]
+position = Vector2(37, 170)
 rotation = -1.5708
 texture_normal = ExtResource("2_dpg1p")
 action = "forward"
 
-[node name="StrafeLeftButton" type="TouchScreenButton" parent="Control/PanelContainer"]
-position = Vector2(170, 290)
-rotation = -3.14159
-texture_normal = ExtResource("2_dpg1p")
-action = "strafe_left"
+[node name="ColorRect3" type="ColorRect" parent="Control/PanelContainer/GridContainer"]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
 
-[node name="TurnRightButton" type="TouchScreenButton" parent="Control/PanelContainer"]
-position = Vector2(600, 20)
+[node name="TurnRightButton" type="TouchScreenButton" parent="Control/PanelContainer/GridContainer/ColorRect3"]
+position = Vector2(165, 40)
 rotation = 3.14159
 scale = Vector2(1, -1)
 texture_normal = ExtResource("1_wp3vf")
 action = "right"
 
-[node name="BackwardButton" type="TouchScreenButton" parent="Control/PanelContainer"]
-position = Vector2(388, 160)
+[node name="ColorRect4" type="ColorRect" parent="Control/PanelContainer/GridContainer"]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+
+[node name="StrafeLeftButton" type="TouchScreenButton" parent="Control/PanelContainer/GridContainer/ColorRect4"]
+position = Vector2(166, 165)
+rotation = -3.14159
+texture_normal = ExtResource("2_dpg1p")
+action = "strafe_left"
+
+[node name="ColorRect5" type="ColorRect" parent="Control/PanelContainer/GridContainer"]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+
+[node name="BackwardButton" type="TouchScreenButton" parent="Control/PanelContainer/GridContainer/ColorRect5"]
+position = Vector2(164, 39)
 rotation = 1.5708
 texture_normal = ExtResource("2_dpg1p")
 action = "backward"
 
-[node name="StrafeRightButton" type="TouchScreenButton" parent="Control/PanelContainer"]
-position = Vector2(470, 290)
-rotation = 3.14159
-scale = Vector2(-1, 1)
+[node name="ColorRect6" type="ColorRect" parent="Control/PanelContainer/GridContainer"]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+
+[node name="StrafeRightButton" type="TouchScreenButton" parent="Control/PanelContainer/GridContainer/ColorRect6"]
+position = Vector2(38, 166)
+scale = Vector2(1, -1)
 texture_normal = ExtResource("2_dpg1p")
 action = "strafe_right"

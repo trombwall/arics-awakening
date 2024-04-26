@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="2_5tcyf"]
 [ext_resource type="Texture2D" uid="uid://dul4gcwu55m0b" path="res://addons/level_block/example_tileset.png" id="3_lr8hp"]
 [ext_resource type="PackedScene" uid="uid://dj0dd2xstid2q" path="res://scenes/player.tscn" id="4_wtect"]
-[ext_resource type="PackedScene" uid="uid://ce021fttltu0" path="res://scenes/ui.tscn" id="5_4chcr"]
+[ext_resource type="PackedScene" uid="uid://bc6bpeohdgdu7" path="res://scenes/nav-control.tscn" id="5_jxuxd"]
 
 [sub_resource type="Environment" id="Environment_68vax"]
 background_mode = 1
@@ -327,5 +327,4 @@ environment = SubResource("Environment_68vax")
 
 [node name="Player" parent="." instance=ExtResource("4_wtect")]
 
-[node name="UI" parent="Player" instance=ExtResource("5_4chcr")]
-position = Vector2(324, 1151)
+[node name="Control" parent="Player" instance=ExtResource("5_jxuxd")]

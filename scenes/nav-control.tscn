@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc6bpeohdgdu7"]
+
+[ext_resource type="Texture2D" uid="uid://b0q5eds27wlnr" path="res://assets/arrow-turn.png" id="1_65i73"]
+[ext_resource type="Texture2D" uid="uid://bdmclx1bm28yg" path="res://assets/arrow-straight.png" id="2_5i2pb"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.6875
+anchor_right = 0.935938
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -425.0
+offset_right = 320.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 3
+
+[node name="ColorRect" type="ColorRect" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Panel/GridContainer/ColorRect"]
+position = Vector2(36, 46)
+texture_normal = ExtResource("1_65i73")
+action = "left"
+
+[node name="ColorRect2" type="ColorRect" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Panel/GridContainer/ColorRect2"]
+position = Vector2(37, 175)
+rotation = -1.5708
+texture_normal = ExtResource("2_5i2pb")
+action = "forward"
+
+[node name="ColorRect3" type="ColorRect" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Panel/GridContainer/ColorRect3"]
+position = Vector2(172, 46)
+scale = Vector2(-1, 1)
+texture_normal = ExtResource("1_65i73")
+action = "right"
+
+[node name="ColorRect4" type="ColorRect" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Panel/GridContainer/ColorRect4"]
+position = Vector2(170, 175)
+rotation = 3.14159
+texture_normal = ExtResource("2_5i2pb")
+action = "strafe_left"
+
+[node name="ColorRect5" type="ColorRect" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Panel/GridContainer/ColorRect5"]
+position = Vector2(165, 45)
+rotation = 1.5708
+texture_normal = ExtResource("2_5i2pb")
+action = "backward"
+
+[node name="ColorRect6" type="ColorRect" parent="Panel/GridContainer"]
+custom_minimum_size = Vector2(210, 210)
+layout_mode = 2
+
+[node name="TouchScreenButton5" type="TouchScreenButton" parent="Panel/GridContainer/ColorRect6"]
+position = Vector2(40, 45)
+texture_normal = ExtResource("2_5i2pb")
+action = "strafe_right"
